@@ -24,7 +24,6 @@ require("dotenv").config();
 
 const app = express();
 const MONGODB_URI_PROD = process.env.MONGODB_URI_PROD;
-console.log("MON", MONGODB_URI_PROD);
 app.use(bodyParser.json());
 app.use(cors());
 app.use("/api", indexRouter);

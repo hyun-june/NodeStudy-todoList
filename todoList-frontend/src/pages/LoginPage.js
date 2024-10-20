@@ -18,6 +18,7 @@ const LoginPage = () => {
 
       if (response.status === 200) {
         setUser(response.data.user);
+        sessionStorage.setItem("user", JSON.stringify(response.data.user));
         sessionStorage.setItem("token", response.data.token);
         api.defaults.headers["authorization"] = "Bearer " + response.data.token;
         setError("");

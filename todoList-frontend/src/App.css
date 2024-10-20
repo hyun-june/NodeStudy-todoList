@@ -12,6 +12,9 @@ body {
 .todoNav div {
   margin: 0px 10px;
 }
+.todoNav div:hover {
+  cursor: pointer;
+}
 
 .todo-item {
   border: 1px solid lightblue;

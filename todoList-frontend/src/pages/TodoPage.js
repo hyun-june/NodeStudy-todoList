@@ -9,7 +9,24 @@ import { useNavigate } from "react-router-dom";
 const TodoPage = () => {
   const [todoList, setTodoList] = useState([]);
   const [todoValue, setTodoValue] = useState("");
+  const [user, setUser] = useState("");
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const userName = sessionStorage.getItem("user");
+    if (userName) {
+      try {
+        const userInfo = JSON.parse(userName);
+        setUser(userInfo);
+        getTasks();
+      } catch (error) {
+        console.error("유저 데이터 오류:", error);
+        navigate("/login");
+      }
+    } else {
+      navigate("/login");
+    }
+  }, []);
 
   const getTasks = async () => {
     const response = await api.get("/tasks");
@@ -64,11 +81,27 @@ const TodoPage = () => {
   const gotoRegister = () => {
     navigate("/register");
   };
+
+  const gotoLogout = () => {
+    sessionStorage.clear();
+    setUser(null);
+    navigate("/login");
+  };
+
   return (
     <Container>
       <div className="todoNav">
-        <div onClick={gotoLogin}>로그인</div>
-        <div onClick={gotoRegister}>회원가입</div>
+        {user ? (
+          <>
+            <div>{`${user.name}님`}</div>
+            <div onClick={gotoLogout}>Logout</div>
+          </>
+        ) : (
+          <>
+            <div onClick={gotoLogin}>Login</div>
+            <div onClick={gotoRegister}>register</div>
+          </>
+        )}
       </div>
       <Row className="add-item-row">
         <Col xs={12} sm={10}>

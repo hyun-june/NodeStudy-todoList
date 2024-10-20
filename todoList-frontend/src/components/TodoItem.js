@@ -1,7 +1,7 @@
 import React from "react";
 import { Col, Row } from "react-bootstrap";
 
-const TodoItem = ({ item, deleteItem, updateItem }) => {
+const TodoItem = ({ item, deleteItem, toggleComplete }) => {
   return (
     <Row>
       <Col xs={12}>
@@ -17,9 +17,9 @@ const TodoItem = ({ item, deleteItem, updateItem }) => {
             </button>
             <button
               className="button-delete"
-              onClick={() => updateItem(item._id, item.isComplete)}
+              onClick={() => toggleComplete(item._id)}
             >
-              {item.isComplete ? "안끝남" : "끝남"}
+              {item.isComplete ? `안끝남` : `끝남`}
             </button>
           </div>
         </div>

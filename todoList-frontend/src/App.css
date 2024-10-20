@@ -1,93 +1,98 @@
-body{
+body {
   color: lightblue !important ;
-  background-color: aliceblue !important; 
+  background-color: aliceblue !important;
 }
 
+.todoNav {
+  display: flex;
+  justify-content: flex-end;
+  margin: 5px 0px;
+}
 
+.todoNav div {
+  margin: 0px 10px;
+}
 
-.todo-item{
+.todo-item {
   border: 1px solid lightblue;
   background-color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.todo-content{
-  padding:1em
+.todo-content {
+  padding: 1em;
 }
-.add-item-row{
-  margin-top:50px !important;
+.add-item-row {
+  margin-top: 50px !important;
   margin-bottom: 30px;
 }
-.input-box{
+.input-box {
   padding: 10px;
-  width:100%;
+  width: 100%;
   border: 1px solid lightblue;
-  
-  
 }
-.input-box:focus{
+.input-box:focus {
   outline: none;
 }
-button{
+button {
   background-color: lightblue;
   color: white;
 }
-.button-add{
+.button-add {
   height: 40px;
   width: 100%;
   border: none;
   background-color: lightblue;
   color: white;
 }
-.button-add:hover{
+.button-add:hover {
   background-color: white;
   color: lightblue;
   border: 2px solid lightblue;
 }
-.button-delete{
+.button-delete {
   background-color: white;
   border: 2px solid lightblue;
   color: lightblue;
   margin: 10px;
 }
-.button-delete:hover{
+.button-delete:hover {
   background-color: lightblue;
   color: #ffffff;
 }
 
-.item-complete{
+.item-complete {
   background-color: gainsboro;
-  color:white;
+  color: white;
 }
 
-.login-box{
-  border:1px solid lightblue;
+.login-box {
+  border: 1px solid lightblue;
   max-width: 600px;
   width: 100%;
   background-color: white;
   padding: 20px;
 }
-.login-box label{
+.login-box label {
   font-weight: 700;
 }
 
-.display-center{
+.display-center {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  
 }
 
-.button-box{
-  display:flex;
-  justify-content: space-between
+.button-box {
+  display: flex;
+  justify-content: space-between;
 }
 
-.button-primary{
+.button-primary {
   background-color: lightblue;
   color: #ffffff;
-  border:none;
+  border: none;
 }

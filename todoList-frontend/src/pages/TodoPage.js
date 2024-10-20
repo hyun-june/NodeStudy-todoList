@@ -4,10 +4,12 @@ import api from "../utils/api";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
+import { useNavigate } from "react-router-dom";
 
 const TodoPage = () => {
   const [todoList, setTodoList] = useState([]);
   const [todoValue, setTodoValue] = useState("");
+  const navigate = useNavigate();
 
   const getTasks = async () => {
     const response = await api.get("/tasks");
@@ -56,8 +58,18 @@ const TodoPage = () => {
       console.log("error", error);
     }
   };
+  const gotoLogin = () => {
+    navigate("/login");
+  };
+  const gotoRegister = () => {
+    navigate("/register");
+  };
   return (
     <Container>
+      <div className="todoNav">
+        <div onClick={gotoLogin}>로그인</div>
+        <div onClick={gotoRegister}>회원가입</div>
+      </div>
       <Row className="add-item-row">
         <Col xs={12} sm={10}>
           <input

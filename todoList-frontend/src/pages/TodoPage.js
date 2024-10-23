@@ -45,7 +45,9 @@ const TodoPage = () => {
         getTasks();
       }
       setTodoValue("");
-    } catch (error) {}
+    } catch (error) {
+      console.log("error:", error);
+    }
   };
 
   const deleteItem = async (id) => {

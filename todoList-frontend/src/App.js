@@ -18,7 +18,6 @@ function App() {
         const response = await api.get("/user/me");
         setUser(response.data.user);
       }
-      const response = api.get("/user");
     } catch (error) {
       setUser(null);
     }
